@@ -1,19 +1,52 @@
-name: Auto Assign
-on:
-  issues:
-    types: [opened]
-  pull_request:
-    types: [opened]
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
-    steps:
-    - name: 'Auto-assign issue'
-      uses: pozil/auto-assign-issue@v1
-      with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          assignees: SorynTech
-          numOfAssignee: 1
+name: Developer Access or Join Request
+description: Use this template to join FischPond Studios or request developer access.
+title: "[Join/Access Request]: "
+labels: ["developer-request"]
+assignees: ["sorynTech"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Welcome to FischPond Studios!
+        Thank you for your interest in joining our team. Please fill out the form below based on your status.
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Request Type
+      description: Are you joining for the first time or do you already have developer status?
+      options:
+        - "I want to join FischPond (Luau Programmer)"
+        - "Developer requiring access to FischPond"
+    validations:
+      required: true
+  - type: input
+    id: roblox-username
+    attributes:
+      label: Roblox Username
+      description: Please provide your Roblox username for verification.
+      placeholder: "e.g., RobloxDev123"
+    validations:
+      required: false
+  - type: textarea
+    id: experience
+    attributes:
+      label: Luau Experience & Portfolio
+      description: |
+        If you are applying to join, please describe your experience with the Luau programming language. 
+        Include links to any games or scripts you have developed.
+      placeholder: "I have been using Luau for 2 years and worked on..."
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        **Note for existing developers:** 
+        If you are already a developer and require access, please ensure the issue title is set to: 
+        `Developer require accsess to fischpond`
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I understand that SorynTech will review this and add me to the organization if approved.
+          required: true
