@@ -17,3 +17,7 @@ how to apply:
 ---
 ---
 go to the [issues](https://github.com/SorynTech/Fischpond-studios/issues) tab and use the template given to you to apply for accsess then just submit your request the issue will get auto assigned to @soryntech which means you dont need to assign any staff of Fischpond as the owner of the organisation will look and talk with the team
+
+Language bar:
+
+This repo utilises the language bar on github as to prove its the real repository we also utilise a lot of referances to my username and other things if you try to fork or copy this reposiotry we will take action
