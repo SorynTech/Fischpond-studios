@@ -3,12 +3,14 @@ description: Use this template to join FischPond Studios or request developer ac
 title: "[Join/Access Request]: "
 labels: ["developer-request"]
 assignees: ["sorynTech"]
+
 body:
   - type: markdown
     attributes:
       value: |
         ### Welcome to FischPond Studios!
         Thank you for your interest in joining our team. Please fill out the form below based on your status.
+
   - type: dropdown
     id: request-type
     attributes:
@@ -19,6 +21,7 @@ body:
         - "Developer requiring access to FischPond"
     validations:
       required: true
+
   - type: input
     id: roblox-username
     attributes:
@@ -27,34 +30,45 @@ body:
       placeholder: "e.g., RobloxDev123"
     validations:
       required: false
+
   - type: textarea
     id: experience
     attributes:
       label: Luau Experience & Portfolio
       description: |
-        If you are applying to join, please describe your experience with the Luau programming language (If you are a dev please ignore this). 
+        If you are applying to join, please describe your experience with the Luau programming language.
+        (If you are already a developer, you may ignore this.)
         Include links to any games or scripts you have developed.
       placeholder: "I have been using Luau for 2 years and worked on..."
     validations:
       required: false
-  - type: markdown
-   attributes:
-      label: Discord_user
+
+  - type: input
+    id: discord-user
+    attributes:
+      label: Discord Username
       description: |
-        Please enter your username for discord here (e.g. wumpus112) this will allow soryntech to invite you to the discord server and interview you more if needed
+        Please enter your Discord username here (e.g. wumpus112).
+        This allows SorynTech to invite you to the Discord server and interview you if needed.
       placeholder: "wumpus112"
     validations:
       required: true
-        **Note for existing developers:** 
-        If you are already a developer and require access, please ensure the issue title is set to: 
-        `Developer require accsess to fischpond`
+
+  - type: markdown
+    attributes:
+      value: |
+        **Note for existing developers:**  
+        If you are already a developer and require access, please ensure the issue title is set to:  
+        `Developer require access to FischPond`
+
   - type: checkboxes
     id: terms
     attributes:
       label: Acknowledgement
       options:
         - label: I understand that SorynTech will review this and add me to the organization if approved.
-        - label: I understand that SorynTech will add me on one of his discord accounts to interview me more if needed
-        - label: I have selected the correct role and put the correct title for this 
-        - label: I have entered the correct and valid information and this is not to waste time of Developers and repo admins
-          required: true
+        - label: I understand that SorynTech may add me on Discord to interview me if needed.
+        - label: I have selected the correct role and put the correct title for this.
+        - label: I have entered correct and valid information and this is not to waste the time of developers and repo admins.
+    validations:
+      required: true
